@@ -1,0 +1,175 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\PdfController;
+
+use App\Http\Controllers\operation\RenterInfoController;
+use App\Http\Controllers\operation\RentCollectionController;
+use App\Http\Controllers\operation\ExpenseController;
+use App\Http\Controllers\operation\AdvanceController;
+
+use App\Http\Controllers\setup\BuildingController;
+use App\Http\Controllers\setup\FlatInfoController;
+use App\Http\Controllers\setup\RentSetupController;
+use App\Http\Controllers\setup\NewUserController;
+use App\Http\Controllers\setup\ChangePasswordController;
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+/*
+Route::get('/welcome', function () {
+    return view('welcome');
+}); */
+
+//Route::get('/dashboard', function () {
+//   return view('frontend.dashboard');
+//});
+
+Route::middleware(['auth'])->group(function () {
+    //all of your routes
+
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+
+      // Operation folder related all routes 
+        Route::get('/renterinfo', [RenterInfoController::class, 'index']);
+        Route::get('/addrenter', [RenterInfoController::class, 'create']);
+        Route::post('/addrenter', [RenterInfoController::class, 'Store']);
+        Route::get('/editrenter/{id}', [RenterInfoController::class, 'show']);
+        Route::post('/editrenter/{id}', [RenterInfoController::class,'update']);
+        Route::get('/deleterenter/{id}', [RenterInfoController::class,'delete']);
+        Route::get('/profile/{id}', [RenterInfoController::class, 'profile']);
+
+        Route::get('/getbuildinginfo/{id}', [RenterInfoController::class, 'renterData']);  // this route is for ajax loading
+
+
+
+
+        Route::get('/rentcollection', [RentCollectionController::class, 'index']);
+        Route::get('/addrentcollection', [RentCollectionController::class, 'create']);
+        Route::post('/addrentcollection', [RentCollectionController::class, 'store']);
+        Route::get('/editrentercollection/{id}', [RentCollectionController::class, 'show']);
+        Route::post('/editrentercollection/{id}', [RentCollectionController::class, 'update']);
+
+        Route::get('/getrenterDataCollection/{id}', [RentCollectionController::class, 'renterData']);  // this route is for ajax loading
+
+        Route::get('/prodata', [RentCollectionController::class, 'prodata']);
+        Route::get('/dataprocessing', [RentCollectionController::class, 'processform']);
+        Route::post('/dataprocessing', [RentCollectionController::class, 'process']);
+
+
+
+
+
+        Route::get('/expense', [ExpenseController::class, 'index']);
+        Route::get('/addexpense', [ExpenseController::class, 'create']);
+        Route::post('/addexpense', [ExpenseController::class, 'Store']);
+        Route::get('/editexpense/{id}', [ExpenseController::class, 'show']);
+        Route::post('/editexpense/{id}', [ExpenseController::class,'update']);
+        Route::get('/deleteexpense/{id}', [ExpenseController::class,'delete']);
+
+
+
+        Route::get('/advance', [AdvanceController::class, 'index']);
+        Route::get('/addadvance', [AdvanceController::class, 'create']);
+        Route::post('/addadvance', [AdvanceController::class, 'store']);
+        Route::get('/editadvance/{id}', [AdvanceController::class, 'show']);
+        Route::post('/editadvance/{id}', [AdvanceController::class,'update']);
+        Route::get('/deleteadvance/{id}', [AdvanceController::class,'delete']);
+
+
+        Route::get('/getrenterData/{id}', [AdvanceController::class, 'renterData']);  // this route is for ajax loading
+
+
+        // Report related all routes
+
+        Route::get('/creport', [ReportController::class, 'index']); 
+        Route::post('/creport', [ReportController::class, 'show']); 
+
+        Route::get('/dreport', [ReportController::class, 'indexdue']); 
+        Route::post('/dreport', [ReportController::class, 'showdue']); 
+
+        Route::get('/ereport', [ReportController::class, 'indexexpense']); 
+        Route::post('/ereport', [ReportController::class, 'showexpense']); 
+
+        Route::get('/ereport', [ReportController::class, 'indexexpense']); 
+        Route::post('/ereport', [ReportController::class, 'showexpense']); 
+
+        Route::get('/areport', [ReportController::class, 'indexadvance']); 
+        Route::post('/areport', [ReportController::class, 'showadvance']); 
+
+
+        Route::get('/pdfdownload/{id}', [PdfController::class,'pdfgenerator']);  ////to generate PDF for print
+        Route::get('/pdfview/{id}', [PdfController::class,'show']);
+
+
+
+        // Setup related all routes 
+        Route::get('/flatinfo', [FlatInfoController::class, 'index']);
+        Route::get('/addflat', [FlatInfoController::class, 'create']);
+        Route::post('/addflat', [FlatInfoController::class, 'store']);
+        Route::get('/editflat/{id}', [FlatInfoController::class, 'show']);
+        Route::post('/editflat/{id}', [FlatInfoController::class,'update']);
+        Route::get('/deleteflat/{id}', [FlatInfoController::class,'delete']);
+
+
+        
+         Route::get('/building', [BuildingController::class, 'index']);
+         Route::get('/addbuilding', [BuildingController::class, 'create']);
+         Route::post('/addbuilding', [BuildingController::class, 'store']);
+         Route::get('/editbuilding/{id}', [BuildingController::class, 'show']);
+         Route::post('/editbuilding/{id}', [BuildingController::class,'update']);
+         Route::get('/deletebuilding/{id}', [BuildingController::class,'delete']); 
+
+        Route::get('/rentsetup', [RentSetupController::class,'index']);
+
+        Route::get('/userlist', [NewUserController::class,'index']);
+        Route::get('/addnewuser', [NewUserController::class,'create']);
+        Route::post('/addnewuser', [NewUserController::class,'store']);
+        Route::get('/edituser/{id}', [NewUserController::class,'show']);
+        Route::post('/edituser/{id}', [NewUserController::class,'update']);
+        Route::get('/deleteuser/{id}', [NewUserController::class,'delete']);
+
+        Route::get('/changepassword', [ChangePasswordController::class,'index']);
+  
+ 
+
+});
+
+///END OF GROUP AUTHENTICATION
+
+
+
+
+/*Route::get('/createuser', function () {
+    return view('frontend.createuser');
+}); */
+
+Auth::routes();
+
+///BELLOW CODE IS FOR REDIRECT DEFAULT REGISTER FORM /**to enable that just remove this code only */
+/*Route::any('/register', function() {
+    return  view('auth.register');   
+});*/
+///
+
+//Route::get('/home', [HomeController::class, 'index'])->name('home');
