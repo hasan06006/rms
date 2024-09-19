@@ -18,11 +18,11 @@ class RenterInfoController extends Controller
     function index(){     
         //$renterinfos = DB::select('select * from renterInfos ');
        // $renterinfos = DB::table('renterinfos')->orderBy('id', 'desc')->get();
-<<<<<<< HEAD
+
         $renterinfos = Renterinfo::orderBy('id', 'desc')->paginate(50);     
-=======
+
         $renterinfos = Renterinfo::orderBy('id', 'desc')->paginate(5);     
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
         
         return view('renterinfo.renterInfo',['renterinfos'=>$renterinfos]);
     }

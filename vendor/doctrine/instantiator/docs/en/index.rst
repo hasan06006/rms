@@ -42,7 +42,7 @@ Contributing
    ``master``.
 
 Testing
-=======
+
 
 The PHPUnit version to be used is the one installed as a dev- dependency
 via composer:
@@ -55,7 +55,7 @@ Accepted coverage for new contributions is 80%. Any contribution not
 satisfying this requirement won’t be merged.
 
 Credits
-=======
+
 
 This library was migrated from `ocramius/instantiator`_, which has been
 donated to the doctrine organization, and which is now deprecated in

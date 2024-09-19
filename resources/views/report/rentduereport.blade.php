@@ -37,10 +37,10 @@
                   <tr>
                       <th >#</th>                     
                       <th>For Month </th>
-<<<<<<< HEAD
-=======
+
+
 					  <th>Month & Year</th>
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                       <th>Building</th>
                       <th>Flat</th>
                       <th>Name</th>
@@ -66,10 +66,10 @@
                     <tr>
                       <td>{{++$key}}</td>                     
                       <td>{{ \Carbon\Carbon::parse($rentprocessor->rent_for_month)->format('d/m/Y')}}</td>
-<<<<<<< HEAD
-=======
+
+
 					  <td>{{ $rentprocessor->month }} ,  {{ $rentprocessor->year }}</td>   
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                       <td>{{ optional($rentprocessor->buildinginfo)->name }}
                       </td>
                       <td>{{ optional($rentprocessor->flatinfo)->name}}</td>                      

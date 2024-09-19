@@ -11,10 +11,10 @@ use App\Models\Expense;
 use App\Models\Building;
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
+
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -39,12 +39,12 @@ class ReportController extends Controller
 
         $from  =  date('Y-m-d' , strtotime($request->input('from')));       
         $to    =  date('Y-m-d' , strtotime($request->input('to'))); 
-<<<<<<< HEAD
-=======
+
+
 
        // $from = Carbon::createFromFormat('Y-m-d', $request->input('from'));
         //$to = Carbon::createFromFormat('Y-m-d', $request->input('to'));
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
         $building_id    =  $request->input('building_id');  
         $is_active      =  $request->input('is_active');    
            
@@ -55,42 +55,42 @@ class ReportController extends Controller
             
             $rentcollection = Rentcollection::join('renterinfos', 'rentcollections.renter_id', '=', 'renterinfos.id')
                                               ->Where('renterinfos.is_active', $is_active)                                              
-<<<<<<< HEAD
+
                                               ->Wherebetween('rentcollections.created_at', [$from, $to])
-=======
+
                                               ->Wherebetween(DB::raw('DATE(rentcollections.created_at)'), [$from, $to])
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                               ->get(['rentcollections.*', 'renterinfos.is_active']);  
             
          }elseif($is_active == 'ALL' && $building_id != 'ALL'){
             $rentcollection = Rentcollection::join('renterinfos', 'rentcollections.renter_id', '=', 'renterinfos.id')  
                                              ->Where('rentcollections.building_id', $building_id)                                           
-<<<<<<< HEAD
+
                                              ->Wherebetween('rentcollections.created_at', [$from, $to])
-=======
+
                                              ->Wherebetween(DB::raw('DATE(rentcollections.created_at)'), [$from, $to])
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                              ->get(['rentcollections.*', 'renterinfos.is_active']);
       
          }elseif($is_active != 'ALL' && $building_id != 'ALL'){
             $rentcollection = Rentcollection::join('renterinfos', 'rentcollections.renter_id', '=', 'renterinfos.id')  
                                              ->Where('renterinfos.is_active', $is_active)    
                                              ->Where('rentcollections.building_id', $building_id)                                           
-<<<<<<< HEAD
+
                                              ->Wherebetween('rentcollections.created_at', [$from, $to])
-=======
+
                                              ->Wherebetween(DB::raw('DATE(rentcollections.created_at)'), [$from, $to])
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                              ->get(['rentcollections.*', 'renterinfos.is_active']);
 
          }else{
 
             $rentcollection = Rentcollection::join('renterinfos', 'rentcollections.renter_id', '=', 'renterinfos.id')                                                       
-<<<<<<< HEAD
+
                                             ->Wherebetween('rentcollections.created_at', [$from, $to])
-=======
+
                                             ->Wherebetween(DB::raw('DATE(rentcollections.created_at)'), [$from, $to])
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                             ->get(['rentcollections.*', 'renterinfos.is_active']);  
          }     
    
@@ -129,18 +129,18 @@ class ReportController extends Controller
      //   $rentcollection = Rentcollection::whereBetween('rent_for_month', [$from, $to])->get();
         if ($building_id == 'ALL'){
             
-<<<<<<< HEAD
+
             $rentprocessor = Rentprocessor::leftjoin('rentcollections', 'rentprocessors.renter_id', '=', 'rentcollections.renter_id')
                                               ->Where('rentcollections.renter_id', NULL)                                              
                                               ->Wherebetween('rentprocessors.rent_for_month', [$from, $to])
                                               ->get(['rentprocessors.*']);        
-         }else{
+         }elseif($building_id != 'ALL'){
 
             $rentprocessor = Rentprocessor::leftjoin('rentcollections', 'rentprocessors.renter_id', '=', 'rentcollections.renter_id')
                                             ->Where('rentcollections.renter_id', NULL) 
                                             ->Where('rentprocessors.building_id', $building_id)                                              
-                                            ->Wherebetween('rentprocessors.rent_for_month', [$from, $to])
-=======
+                                            ->Wherebetween('rentprocessors.rent_for_month', [$from, $to]);
+
           //  $rentprocessor = Rentprocessor::leftjoin('rentcollections', 'rentprocessors.renter_id', '=', 'rentcollections.renter_id')
            //                                   ->Where('rentcollections.renter_id', NULL)                                              
           //                                    ->Wherebetween('rentprocessors.rent_for_month', [$from, $to])
@@ -162,7 +162,7 @@ class ReportController extends Controller
                                             ->Where('rentcollections.renter_id', NULL) 
                                             ->Where('rentprocessors.building_id', $building_id)                                              
                                             ->Wherebetween(DB::raw('DATE(rentprocessors.rent_for_month)'), [$from, $to])
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                             ->get(['rentprocessors.*']);   
          }     
    
@@ -194,19 +194,19 @@ class ReportController extends Controller
        
         if ($expense_type == 'ALL'){
             
-<<<<<<< HEAD
-            $expense = Expense::Wherebetween('created_at', [$from, $to])
-                                              ->get();        
-         }else{
 
             $expense = Expense::Wherebetween('created_at', [$from, $to])
-=======
+                                              ->get();        
+         }elseif($expense_type != 'ALL'){
+
+            $expense = Expense::Wherebetween('created_at', [$from, $to]);
+
             $expense = Expense::Wherebetween(DB::raw('DATE(created_at)'), [$from, $to])            
                                 ->get();        
          }else{
 
             $expense = Expense::Wherebetween(DB::raw('DATE(created_at)'), [$from, $to])
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                 ->where('expense_type',$expense_type)
                                 ->get();    
          }     

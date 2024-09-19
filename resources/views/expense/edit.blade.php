@@ -18,17 +18,17 @@
 
                             <div class="col-md-6">                           
                                 <select class="form-control select2" name="expense_type" id="expense_type" required >
-<<<<<<< HEAD
+
                                     <option value="">Select one</option>                                 
                                     <option value="Withdrawal" @if($expenses->expense_type==='Withdrawal') selected='selected' @endif >Withdrawal</option> 
                                     <option value="Bill" @if($expenses->expense_type==='Bill') selected='selected' @endif > Bill </option>                                                                   
-=======
+
                                     <option value="">Select one</option>                                     
                                
                                     @foreach ($expense_types as $expense_types)                                     
                                       <option value="{{ $expense_types->id }}" @if($expenses->expense_type == $expense_types->id) selected='selected' @endif>{{ $expense_types->type }}</option>
                                     @endforeach  
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                                 </select>               
                                 
                               

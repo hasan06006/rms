@@ -1,5 +1,5 @@
 Plugins
-=======
+
 
 Plugins exist to extend, or modify the behaviour of Swift Mailer. They respond
 to Events that are fired within the Transports during sending.

@@ -57,11 +57,11 @@
                   @foreach ($expenses as $key=>$expense)
                     <tr>
                       <td>{{++$key}}</td>                     
-<<<<<<< HEAD
+
                       <td>{{ $expense->expense_type }}</td>
-=======
+
                       <td>{{ $expense->expensetypeinfo->type }}</td>
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
                       <td>{{ $expense->amount }}</td>     
                       <td>{{ $expense->note }}</td> 
                       <td>{{ optional($expense->createsby)->name }}</td> 

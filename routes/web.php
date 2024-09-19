@@ -167,15 +167,15 @@ Route::middleware(['auth'])->group(function () {
 Auth::routes();
 
 ///BELLOW CODE IS FOR REDIRECT DEFAULT REGISTER FORM /**to enable that just remove this code only */
-<<<<<<< HEAD
+/*
 Route::any('/register', function() {
     return  view('auth.login');
 });
-=======
+
 /*Route::any('/register', function() {
     return  view('auth.register');   
 });*/
->>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
+
 ///
 
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
