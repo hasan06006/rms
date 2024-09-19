@@ -16,8 +16,13 @@ class ExpenseController extends Controller
     }
 
     function create(){
+<<<<<<< HEAD
 
         return view('expense.create');
+=======
+        $expense_types = DB::table('expense_types')->Where('is_active', 'YES')->get(); // For dropdown flat list from 
+        return view('expense.create',['expense_types'=>$expense_types]);     
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
     }
 
     function store(Request $request){
@@ -40,8 +45,14 @@ class ExpenseController extends Controller
     
     function show($id){     
        
+<<<<<<< HEAD
         $expenses = Expense::find($id);    
         return view('expense.edit', compact('expenses'));
+=======
+        $expenses = Expense::find($id);   
+        $expense_types = DB::table('expense_types')->Where('is_active', 'YES')->get();  
+        return view('expense.edit', compact('expenses','expense_types'));
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
     }
 
 

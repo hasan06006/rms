@@ -19,7 +19,11 @@
                                     <tbody>
                                         <tr>                                        
                                         <td class="content-block" style="text-align:center;" >
+<<<<<<< HEAD
                                             <h2>Rent Invoice</h2>
+=======
+                                            <h2>Rent Receipt</h2>
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                                         </td>
                                     </tr>
                                     <tr>

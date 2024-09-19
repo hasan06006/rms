@@ -89,8 +89,16 @@ class AdvanceController extends Controller
        
 
         $renterinfos =  DB::table('renterinfos')
+<<<<<<< HEAD
                      ->Where('assigned_flat', $id)                   
                      ->first();         
+=======
+                     ->join('buildings', 'renterinfos.building_id', '=', 'buildings.id')
+                     ->Where('renterinfos.assigned_flat', $id) 
+                     ->Where('renterinfos.is_active','ACTIVE')                  
+                     ->select('renterinfos.id','renterinfos.name','renterinfos.building_id','buildings.name as bname')                   
+                     ->first();                   
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
         
          return Response::json($renterinfos);                         
         

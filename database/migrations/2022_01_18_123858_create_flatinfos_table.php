@@ -19,7 +19,11 @@ class CreateFlatinfosTable extends Migration
             $table->string('name'); 
             $table->string('renter_category');          
             $table->string('rent_amt');           
+<<<<<<< HEAD
             $table->string('note');   
+=======
+            $table->string('note')->nullable();   
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
             $table->string('is_active');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();           

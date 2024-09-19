@@ -261,6 +261,10 @@ class RentCollectionController extends Controller
                     ->join('flatinfos', 'renterinfos.assigned_flat', '=', 'flatinfos.id')
                     ->join('buildings', 'flatinfos.building_id', '=', 'buildings.id')
                     ->Where('assigned_flat', $id)  
+<<<<<<< HEAD
+=======
+                    ->Where('renterinfos.is_active','ACTIVE')
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                     ->select('renterinfos.id','renterinfos.name', 'buildings.name as bname', 'flatinfos.building_id','flatinfos.rent_amt','flatinfos.renter_category')
                     ->first();        
         

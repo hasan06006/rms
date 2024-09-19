@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Feb 12, 2022 at 05:27 PM
+=======
+-- Generation Time: Jun 17, 2022 at 08:39 PM
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -42,6 +46,7 @@ CREATE TABLE `advances` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `advances`
 --
@@ -54,6 +59,8 @@ INSERT INTO `advances` (`id`, `flat_id`, `building_id`, `name`, `renter_id`, `cr
 (5, '17', '1', 'abrar', '8', '10000', NULL, NULL, '1', NULL, '2022-02-07 11:33:13', '2022-02-07 11:33:13'),
 (6, '17', '1', 'abrar', '8', NULL, '5000', NULL, '1', NULL, '2022-02-07 11:39:00', '2022-02-07 11:39:00');
 
+=======
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- --------------------------------------------------------
 
 --
@@ -71,6 +78,7 @@ CREATE TABLE `buildings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `buildings`
 --
@@ -79,6 +87,8 @@ INSERT INTO `buildings` (`id`, `name`, `description`, `is_active`, `created_by`,
 (1, 'Baitul Haque', 'test', 'YES', '1', '1', '2022-02-11 13:48:29', '2022-02-11 13:58:25'),
 (2, 'Haque Mansion', NULL, 'YES', '1', NULL, '2022-02-11 14:04:58', '2022-02-11 14:04:58');
 
+=======
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- --------------------------------------------------------
 
 --
@@ -96,6 +106,7 @@ CREATE TABLE `expenses` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `expenses`
 --
@@ -103,6 +114,21 @@ CREATE TABLE `expenses` (
 INSERT INTO `expenses` (`id`, `expense_type`, `amount`, `note`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 (2, 'Withdrawal', '5000', 'dsdas', NULL, NULL, '2022-01-18 10:07:48', '2022-01-18 10:07:48'),
 (3, '1', '10000', NULL, NULL, NULL, '2022-02-07 11:47:02', '2022-02-07 11:47:02');
+=======
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expense_types`
+--
+
+CREATE TABLE `expense_types` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 -- --------------------------------------------------------
 
@@ -140,6 +166,7 @@ CREATE TABLE `flatinfos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `flatinfos`
 --
@@ -162,6 +189,8 @@ INSERT INTO `flatinfos` (`id`, `building_id`, `name`, `renter_category`, `rent_a
 (17, '1', 'flat 5-2', 'GENERAL', '5000', '', 'AVAILABLE', NULL, NULL, '2022-02-07 05:28:46', '2022-02-07 05:28:46'),
 (18, '2', 'Flat 3-5', 'GENERAL', '5000', '', 'BOOKED', NULL, NULL, '2022-02-07 06:19:35', '2022-02-07 06:19:35');
 
+=======
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- --------------------------------------------------------
 
 --
@@ -189,7 +218,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2022_01_27_142135_create_rentcollections_table', 6),
 (14, '2022_02_09_163639_create_rentprocessors_table', 7),
 (15, '2022_01_18_123858_create_flatinfos_table', 8),
+<<<<<<< HEAD
 (16, '2022_02_11_184239_create_buildings_table', 8);
+=======
+(16, '2022_02_11_184239_create_buildings_table', 8),
+(19, '2022_06_17_155500_create_expense_types_table', 9);
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 -- --------------------------------------------------------
 
@@ -248,6 +282,7 @@ CREATE TABLE `rentcollections` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `rentcollections`
 --
@@ -260,6 +295,8 @@ INSERT INTO `rentcollections` (`id`, `rent_for_month`, `month`, `year`, `buildin
 (5, '2022-01-01', 'January', '2022', '1', '2', '2', '20000', '1000', '975', '200', 'GENERAL', NULL, NULL, '1', NULL, '2022-02-09 13:21:00', '2022-02-09 13:21:00'),
 (6, '2022-02-02', 'February', '2022', '1', '15', '7', '20000', '1000', '975', '200', 'GENERAL', NULL, NULL, '1', '1', '2022-02-10 11:13:10', '2022-02-10 11:34:45');
 
+=======
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- --------------------------------------------------------
 
 --
@@ -295,7 +332,13 @@ INSERT INTO `renterinfos` (`id`, `name`, `father_name`, `nid`, `mobile`, `addres
 (5, 'pias', 'kamrul', '556576545', '77867678', 'hkjhjkhjkhk', '13', '1', 'General', '1644093747.jpg', 'ACTIVE', '1', NULL, '2022-02-05 14:42:27', '2022-02-11 07:30:43'),
 (6, 'boni amin', 'moni amin', '657657657', '675656', 'hkkjhjhjg ghgj', '16', '1', 'General', '1644163431.jpg', 'ACTIVE', '1', NULL, '2022-02-06 10:03:51', '2022-02-06 10:03:51'),
 (7, 'kana baba', 'sana baba', '65765754545456', '644546546', 'jhjggfg fgfghfgh', '15', '1', 'General', '1644163473.jpg', 'ACTIVE', '1', NULL, '2022-02-06 10:04:33', '2022-02-06 10:04:33'),
+<<<<<<< HEAD
 (8, 'abrar', 'xxxxxx', '45564645', '56576576', 'ggjhhg hghjgj', '18', '2', 'General', '1644255075.docx', 'ACTIVE', '1', NULL, '2022-02-07 11:31:15', '2022-02-08 11:29:36');
+=======
+(8, 'abrar', 'xxxxxx', '45564645', '56576576', 'ggjhhg hghjgj', '18', '2', 'General', '1644255075.docx', 'ACTIVE', '1', NULL, '2022-02-07 11:31:15', '2022-02-08 11:29:36'),
+(10, 'mr zaman', 'mr akbar', '23432423', '01913343432', 'jfdskajfkl jkldjskaj', '2', '1', 'General', '1644775370.jpg', 'ACTIVE', '10', NULL, '2022-02-13 12:02:50', '2022-02-13 12:02:50'),
+(11, 'tester', 'testing', '2343232131', '2343223423', 'testers testing area road test village best', '6', '1', 'General', NULL, 'ACTIVE', '11', NULL, '2022-03-02 04:32:36', '2022-03-02 04:32:36');
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 -- --------------------------------------------------------
 
@@ -324,6 +367,7 @@ CREATE TABLE `rentprocessors` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `rentprocessors`
 --
@@ -342,6 +386,8 @@ INSERT INTO `rentprocessors` (`id`, `rent_for_month`, `month`, `year`, `flat_id`
 (11, '2022-01-01', 'January', '2022', '15', '1', '7', '20000', '', '', '', '', '', '', '1', '', '2022-02-10 07:06:52', '2022-02-10 07:06:52'),
 (12, '2022-01-01', 'January', '2022', '18', '2', '8', '5000', '', '', '', '', '', '', '1', '', '2022-02-10 07:06:52', '2022-02-10 07:06:52');
 
+=======
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- --------------------------------------------------------
 
 --
@@ -366,12 +412,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `role_name`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+<<<<<<< HEAD
 (1, 'hasan', 'hasan', NULL, 'Admin', NULL, '$2y$10$ZEUPOpv2tT0/cAYn2KRQpOb9UHbISjwjrvVKfk9vOIBbgVpf2nS6q', 'RKU5a0CzVQkutNVVj4LsIRN1UM84VvcomKjPTPoTGKkd9dJNxwxAYy9Fm4Ep', '2022-01-16 00:08:11', '2022-01-16 00:08:11'),
 (2, 'anchal', 'anchal', NULL, 'Admin', NULL, '$2y$10$78T/ZcvMXIG2ORR9wsTZue.4ItUeCq..O3U7lhDh8XlRwMUMsQp6.', NULL, '2022-01-16 01:29:23', '2022-01-16 01:29:23'),
 (7, 'Rinku hasan', 'rinku', NULL, 'Admin', NULL, '$2y$10$TPZIgRMVETtptHon/uKNw.1amLqSxXGV40YcaXF3m/cPVDJqRxAvO', NULL, '2022-02-05 01:25:04', '2022-02-05 01:31:10'),
 (8, 'pias', 'pias', NULL, 'Admin', NULL, '$2y$10$z9.ij2j9v8jP8ixfRGU7ouHSjPs81qs2K/jAPoljepdUgue9uf6ge', NULL, '2022-02-05 01:25:14', '2022-02-05 01:41:34'),
 (9, 'Admin', 'admin', NULL, 'Admin', NULL, '$2y$10$mf3MozNgI9bwTsys.YRzpup2.vcRh4WRpPhYtZTV4FG2e/CEAuqhK', NULL, '2022-02-05 01:35:45', '2022-02-05 01:35:45'),
 (10, 'roton', 'roton', NULL, 'User', NULL, '$2y$10$pI8nRDZxe2W06rJx.TsodOWAZn.Ri1sfiTSomzzwoLntTjPsRyn7i', NULL, '2022-02-10 15:05:59', '2022-02-10 15:05:59');
+=======
+(1, 'admin', 'admin', NULL, 'Admin', NULL, '$2y$10$L2g.yeSc/UIu3opA6q5d4OqYXZk9uXIxXmrOrp4kMFFGZNn4tF4jS', NULL, '2022-06-17 12:36:35', '2022-06-17 12:38:01');
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- Indexes for dumped tables
@@ -396,6 +446,15 @@ ALTER TABLE `expenses`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
+=======
+-- Indexes for table `expense_types`
+--
+ALTER TABLE `expense_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -461,19 +520,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `advances`
 --
 ALTER TABLE `advances`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `buildings`
 --
 ALTER TABLE `buildings`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `expense_types`
+--
+ALTER TABLE `expense_types`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -485,13 +562,21 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `flatinfos`
 --
 ALTER TABLE `flatinfos`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
+<<<<<<< HEAD
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+=======
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -503,25 +588,41 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `rentcollections`
 --
 ALTER TABLE `rentcollections`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `renterinfos`
 --
 ALTER TABLE `renterinfos`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `rentprocessors`
 --
 ALTER TABLE `rentprocessors`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

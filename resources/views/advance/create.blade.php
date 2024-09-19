@@ -40,7 +40,11 @@
                             <label for="building_id" class="col-md-4 col-form-label text-md-end">{{ __('Building') }}</label>
 
                             <div class="col-md-6">  
+<<<<<<< HEAD
                                 <span id="bdname"> </span>                          
+=======
+                            <input id="bdname" type="text" class="form-control @error('bdname') is-invalid @enderror" name="bdname" value="{{ old('bdname') }}" required  readonly>                       
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                               <input id="building_id" type="hidden" class="form-control @error('building_id') is-invalid @enderror" name="building_id" value="{{ old('building_id') }}" required  readonly>                             
                             </div>
                         </div>
@@ -123,6 +127,7 @@ $(document).ready(function(){
                           //alert( console.log(data.name));
                          // alert(data.name);
                          
+<<<<<<< HEAD
                             $('#building_id').val(data.building_id);
                             $('#name').val(data.name);
                             $('#renter_id').val(data.id);
@@ -134,6 +139,16 @@ $(document).ready(function(){
                                 if(data.building_id==2){
                                 $('#bdname').text("BUILDING-2");
                             }
+=======
+                          
+
+                            $('#building_id').val(data.building_id);
+                            $('#name').val(data.name);
+                            $('#renter_id').val(data.id);                         
+                            $('#bdname').val(data.bname);
+                            
+                      
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                        
                     
                       

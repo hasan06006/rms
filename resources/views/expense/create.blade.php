@@ -17,11 +17,19 @@
                             <label for="expense_type" class="col-md-4 col-form-label text-md-end">{{ __('Expense Type') }}</label>
 
                             <div class="col-md-6">                           
+<<<<<<< HEAD
                                 <select class="form-control select2" name="expense_type" id="expense_type" required >
                                     <option value="">Select Expense type</option>
                                     <option value="GENERAL EXPENSE">GENERAL EXPENSE</option> 
                                     <option value="AMINUL HAQUE">AMINUL HAQUE</option>
                                     <option value="MAZHARUL HAQUE">MAZHARUL HAQUE</option>                                                                      
+=======
+                                <select class="form-control select2" name="expense_type" id="expense_type" required >                                   
+                                <option value="">Select One</option>
+                                    @foreach ($expense_types as $expense_types)
+                                      <option value="{{ $expense_types->id }}">{{ $expense_types->type }}</option>
+                                    @endforeach  
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                                 </select>               
                                 
                               

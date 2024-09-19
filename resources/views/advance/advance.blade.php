@@ -70,7 +70,13 @@
                       <td>{{ optional($advance->createsby)->name }}</td> 
                       <td>{{ \Carbon\Carbon::parse($advance->created_at)->format('d/m/Y') }}</td>                                      
                       <td><a  href="{{url('/editadvance/'.$advance->id)}}">Edit</a> || 
+<<<<<<< HEAD
                           <a  href="{{url('/deleteadvance/'.$advance->id)}}">Delete</a>
+=======
+                      @if(Auth::user()->role_name == 'Admin') 
+                          <a  href="{{url('/deleteadvance/'.$advance->id)}}">Delete</a>
+                      @endif    
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                       </td>
                       </tr>
                     @endforeach

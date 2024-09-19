@@ -16,9 +16,15 @@
           <img src="{{asset('resources/dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
+<<<<<<< HEAD
           <a href="#" class="d-block"> @if (Auth::check()) 
                                        {{ Auth::user()->name }}
                                        @endif
+=======
+          <a href="#" class="d-block"><!-- @if (Auth::check()) 
+                                       {{ Auth::user()->name }}
+                                       @endif-->
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                                       
                                                        
           </a>
@@ -53,19 +59,31 @@
                 </a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="{{url('/expense')}}" class="nav-link ">
+=======
+                <a href="#" class="nav-link ">
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                   <i class="fas fa-dollar-sign nav-icon"></i>
                   <p>Expense</p>
                 </a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="{{url('/advance')}}" class="nav-link ">
+=======
+                <a href="#" class="nav-link ">
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                   <i class="fas fa-solid fa-cash-register nav-icon"></i>
                   <p>Advance</p>
                 </a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="{{ url('/prodata') }}" class="nav-link">
+=======
+                <a href="#" class="nav-link">
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                   <i class="nav-icon fas fa-plug text-warning"></i>
                   
                   <p>Data Processing</p>
@@ -121,7 +139,11 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="{{ url('/flatinfo') }}" class="nav-link">
+=======
+                <a href="#" class="nav-link">
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                   <i class="nav-icon fas fa-solid fa-building text-warning"></i>                
                   <p>Flat Information </p>
                 </a>
@@ -133,7 +155,11 @@
                 </a>
               </li> --->            
          
+<<<<<<< HEAD
                   @if(Auth::user()->role_name == 'Admin')   
+=======
+               <!--   @if(Auth::user()->role_name == 'Admin')  --> 
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                                      
               <li class="nav-item">
                 <a href="{{ url('/userlist') }}" class="nav-link ">
@@ -141,7 +167,11 @@
                   <p> user </p>
                 </a>
               </li>   
+<<<<<<< HEAD
                 @endif
+=======
+               <!-- @endif-->
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                    
             </ul>
           </li>       

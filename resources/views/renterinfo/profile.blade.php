@@ -145,7 +145,12 @@
                 <thead>
                     <tr>
                       <th style="">#</th>                     
+<<<<<<< HEAD
                       <th>For Month </th>                      
+=======
+                      <th>For Month </th>
+                      <th>Month & Year</th>                      
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                       <th>Rent Amt</th>
                       <th>Electric </th>
                       <th>Gas </th>
@@ -163,7 +168,12 @@
                   @foreach ($rentcollections as $key=>$rentcollection)
                     <tr>
                       <td>{{++$key}}</td>                     
+<<<<<<< HEAD
                       <td>{{ \Carbon\Carbon::parse($rentcollection->rent_for_month)->format('d/m/Y')}}</td>                        
+=======
+                      <td>{{ \Carbon\Carbon::parse($rentcollection->rent_for_month)->format('d/m/Y')}}</td>
+                      <td>{{ $rentcollection->month }} ,  {{ $rentcollection->year }}</td>                        
+>>>>>>> 0c9b7fcf868cad50011cb798b5a5cd1c997e4f9d
                       <td>{{ $rentcollection->rent_amt }}</td> 
                       <td>{{ $rentcollection->electric_bill }}</td> 
                       <td>{{ $rentcollection->gas_bill }}</td>
