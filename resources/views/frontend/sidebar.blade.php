@@ -4,7 +4,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="{{asset('resources/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('/../resources/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="fas fa-r">RMS Solution</span>
     </a>
 
@@ -13,7 +13,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('resources/dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('/../resources/dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
 
@@ -59,33 +59,20 @@
                 </a>
               </li>
               <li class="nav-item">
-
-                <a href="{{url('/expense')}}" class="nav-link ">
-
-                <a href="#" class="nav-link ">
-
+                <a href="{{url('/expense')}}" class="nav-link ">                
                   <i class="fas fa-dollar-sign nav-icon"></i>
                   <p>Expense</p>
                 </a>
               </li>
               <li class="nav-item">
-
-                <a href="{{url('/advance')}}" class="nav-link ">
-
-                <a href="#" class="nav-link ">
-
+                <a href="{{url('/advance')}}" class="nav-link ">               
                   <i class="fas fa-solid fa-cash-register nav-icon"></i>
                   <p>Advance</p>
                 </a>
               </li>
               <li class="nav-item">
-
-                <a href="{{ url('/prodata') }}" class="nav-link">
-
-                <a href="#" class="nav-link">
-
-                  <i class="nav-icon fas fa-plug text-warning"></i>
-                  
+                <a href="{{ url('/prodata') }}" class="nav-link">               
+                  <i class="nav-icon fas fa-plug text-warning"></i>                  
                   <p>Data Processing</p>
                 </a>
               </li>
@@ -139,11 +126,8 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-
                 <a href="{{ url('/flatinfo') }}" class="nav-link">
-
                 <a href="#" class="nav-link">
-
                   <i class="nav-icon fas fa-solid fa-building text-warning"></i>                
                   <p>Flat Information </p>
                 </a>
