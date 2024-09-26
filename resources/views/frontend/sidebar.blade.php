@@ -126,8 +126,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/flatinfo') }}" class="nav-link">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/flatinfo') }}" class="nav-link">               
                   <i class="nav-icon fas fa-solid fa-building text-warning"></i>                
                   <p>Flat Information </p>
                 </a>
