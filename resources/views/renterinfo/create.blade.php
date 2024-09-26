@@ -181,7 +181,7 @@
 
 
 
-<script src="{{asset('resources/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('/../resources/plugins/jquery/jquery.min.js')}}"></script>
 <script>
 
 $(document).ready(function(){

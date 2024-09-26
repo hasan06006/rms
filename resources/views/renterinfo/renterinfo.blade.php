@@ -73,7 +73,7 @@
                       <td>
                         {{ optional($renterinfo->flatinfo)->name}}</td>
                       <td>{{ $renterinfo->renter_category }}</td>
-                      <td><a href="{{ asset('public/uploads/documents/'.$renterinfo->document) }}">{{ $renterinfo->document }}</a></td>
+                      <td><a href="{{ asset('/uploads/documents/'.$renterinfo->document) }}">{{ $renterinfo->document }}</a></td>
                       <td>{{ $renterinfo->is_active }}</td>
                       <td>{{ optional($renterinfo->createsby)->name }}</td>
                       <td>{{ \Carbon\Carbon::parse($renterinfo->created_at)->format('d/m/Y') }}</td>
